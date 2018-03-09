@@ -1,7 +1,6 @@
 # Flask Landing page
 A very lightweight landing page with email signup and i18n. It uses Python Flask and sqlite.
 
-This project was originally created for [hellobudget.co](http://hellobudget.co)
 
 # Setup
 1. Install packages `sudo apt install python-pip python-virtualenv python-dev`
