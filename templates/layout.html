@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ gettext('Alex Bilokonenko - Python Programmer') }}</title>
+  <meta name="description" content="{{ gettext('My site') }}">
+  <meta name="keywords" content="{{ gettext('My Landing ') }}" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='icon') }}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
+  {% assets "scss_all" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+  {% endassets %}
+</head>
+<body>
+  <nav class="navbar navbar-full navbar-fixed-top navbar-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="navbar-brand"><img src="{{ url_for('static', filename='alexlogo.jpg') }}" alt="hellobudget"></div>
+           <p class="text-right">
+             <strong>{{ gettext('phone: +375-29-7072689') }} </strong> 
+             </br>
+             <strong>{{ gettext('skype: bilokonenkoaa') }} </strong>
+             </br>
+             <strong>{{ gettext('Email:') }} </strong>  <a href="">sasha-bill@ya.ru</a>
+             </br>
+             <a href="https://github.com/Sasha-bill" target="_blank">GitHub</a>,   <a href="https://vk.com/bilokonenko" target="_blank">VK</a>
+       
+          </p>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  {% block body %}{% endblock %}
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <p class="text-center">
+        <strong>{{ gettext('Made by:') }} </strong>  <a href="">Alex Bilokonenko</a>
+        <strong>{{ gettext('Follow Me:') }} </strong><a href="https://vk.com/bilokonenko" target="_blank">VK</a>, <a href="https://github.com/Sasha-bill" target="_blank">GitHub</a>
+       
+        </br>
+        <strong>{{ gettext('phone: +375-29-7072689') }} </strong>, <strong>{{ gettext('Email:') }} </strong>  <a href="">sasha-bill@ya.ru</a>
+       
+    </p>
+  </div>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50302091-5', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+ 

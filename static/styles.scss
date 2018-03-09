@@ -1,0 +1,242 @@
+$hb-green:                              #CBE953;
+$hb-yellow:                             #FEA81F;
+$hb-pink:                               #AC208E;
+$hb-turquoise:                          #1F8BB7;
+$hb-dark-turquoise:                     #0D4157;
+$hb-dark-gray:                          #3B3B3B;
+$hb-light-gray:                         #75818a;
+$hb-brown:                              #FAF7F2;
+
+$brand-primary:                         darken($hb-green, 5%);
+$brand-secondary:                       lighten($hb-turquoise, 25%);
+$brand-success:                         #5cb85c;
+$brand-info:                            #5bc0de;
+$brand-warning:                         #f0ad4e;
+$brand-danger:                          #d9534f;
+
+$facebook-color:                        #3C589D;
+$google-color:                          #FF132F;
+
+$body-bg:                               $hb-brown;
+$body-color:                            desaturate(darken($body-bg, 60%), 30%);
+
+$link-color:                            $hb-turquoise;
+$link-hover-color:                      darken($link-color, 15%);
+$link-hover-decoration:                 none;
+
+$btn-primary-bg:                        lighten($brand-primary, 5%);
+$btn-primary-color:                     darken($btn-primary-bg, 42%);
+$btn-primary-border:                    desaturate(darken($btn-primary-bg, 15%), 5%);
+
+$btn-primary-hover-bg:                  lighten($brand-primary, 5%);
+$btn-primary-hover-color:               darken($btn-primary-color, 5%);
+$btn-primary-hover-border:              darken($btn-primary-border, 5%);
+
+$btn-primary-active-bg:                 desaturate(darken($brand-primary, 5%), 10%);
+$btn-primary-active-color:              lighten($btn-primary-color, 5%);
+$btn-primary-active-border:             darken($btn-primary-border, 8%);
+
+$btn-secondary-bg:                      desaturate(lighten($brand-secondary, 55%), 15%);
+$btn-secondary-color:                   desaturate(darken($btn-secondary-bg, 65%), 25%);
+$btn-secondary-border:                  desaturate(darken($btn-secondary-bg, 22%), 5%);
+
+$btn-secondary-active-bg:               desaturate(lighten($brand-secondary, 25%), 10%);
+$btn-secondary-active-color:            darken($btn-secondary-color, 5%);
+$btn-secondary-active-border:           $btn-secondary-border;
+
+$btn-secondary-hover-bg:                darken($btn-secondary-active-bg, 5%);
+$btn-secondary-hover-color:             $btn-secondary-active-color;
+$btn-secondary-hover-border:            $btn-secondary-active-border;
+
+$btn-link-bg:                           $btn-secondary-bg;
+$btn-link-color:                        $btn-secondary-color;
+$btn-link-border:                       $btn-secondary-border;
+
+$btn-success-color:                     #fff;
+$btn-success-bg:                        $brand-success;
+$btn-success-border:                    darken($btn-success-bg, 5%);
+
+// Bootstrap vars: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+@import "/stylesheets/bootstrap";
+
+html {
+  /* required for sticky footer */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 82px;
+  /* Margin bottom by footer height */
+  margin-bottom: 77px;
+  color: $hb-light-gray;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+h2 {
+  color: $hb-dark-turquoise;
+}
+
+.hb-active {
+  background-color: $btn-secondary-active-bg;
+}
+.hb-hover {
+  background-color: $btn-secondary-hover-bg;
+}
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid darken($body-bg, 10%);
+  height: 90px;
+}
+
+@mixin colored-shadow($color) {
+  box-shadow: inset 0 1px 0 transparentize(#fff, 0.5), 0 2px 0 transparentize($color, 0.5);
+}
+@mixin colored-shadow-down($color) {
+  box-shadow: inset 0 1px 0 transparentize(#fff, 0.5), 0 1px 1px transparentize($color, 0.8);
+}
+
+.box-shadow-low {
+  box-shadow: 0 1px 0 transparentize($body-color, 0.6);
+}
+
+.box-shadow-low-down {
+  box-shadow: inset 0 -1px 0 transparentize(#fff, 0.1), inset 0 1px 0 transparentize($body-color, 0.4);
+}
+
+
+.btn-primary {
+  @include colored-shadow(darken($btn-primary-bg, 50%));
+  border-color: $btn-primary-border;
+}
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus,
+.btn-primary:focus,
+.btn-primary.focus:active {
+  background-color: $btn-primary-active-bg;
+  color: $btn-primary-active-color;
+  border-color: $btn-primary-active-border;
+  @include colored-shadow-down(darken($btn-primary-bg, 50%));
+}
+
+.btn-primary:hover {
+  background-color: $btn-primary-hover-bg;
+  color: $btn-primary-hover-color;
+  border-color: $btn-primary-hover-border;
+}
+
+.btn-secondary.active {
+  @extend .box-shadow-low-down;
+}
+
+.btn.btn-link, .btn.btn-secondary, .btn.btn-default {
+  background-color: $btn-secondary-bg;
+  color: $btn-secondary-color;
+  border-color: $btn-secondary-border;
+  border-radius: 4px;
+  @include colored-shadow(darken($btn-secondary-bg, 50%));
+
+  &.active, &:active, &:focus {
+    background-color: $btn-secondary-active-bg;
+    color: $btn-secondary-active-color;
+    border-color: $btn-secondary-active-border;
+    @include colored-shadow-down(darken($btn-secondary-bg, 50%));
+  }
+  &:hover {
+    @extend .hb-hover;
+    background-color: $btn-secondary-hover-bg;
+    color: $btn-secondary-hover-color;
+    border-color: $btn-secondary-hover-border;
+  }
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 77px;
+  padding-top: 20px;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-fluid > .container {
+  padding-top: 18px;
+}
+
+
+hr {
+  margin: 10px 0;
+  height: 3px;
+  border-top-color: #ddd;
+  border-bottom-color: #bbb;
+}
+
+.container-fluid  .jumbotron {
+  text-align: center;
+  border-radius: 0;
+  background-image: url(/static/jumbotron.jpg);
+  background-size: cover;
+  margin-bottom: 0;
+
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 8px rgba(154, 154, 154, 0.5);
+    font-weight: 800;
+  }
+
+  h2 {
+    color: white;
+    text-shadow: 1px 1px 8px rgba(154, 154, 154, 0.5);
+  }
+
+}
+
+
+.centered-row {
+  text-align: center;
+}
+
+.feature-row {
+  padding: 2em;
+  line-height: 1.7em;
+  font-size: 20px;
+  // border-bottom: 1px solid #ece0cd;
+
+  h2 {
+    margin: 0.5em 0 0.5em 0.4em
+  }
+
+  &.text-xs-center h2 {
+    margin: 0.5em 0;
+  }
+
+  ul {
+    list-style-type: square;
+  }
+
+
+}
+
+.bg-gray {
+    background-color: #eee;
+    border-bottom: 1px solid #ece0cd;
+    border-top: 1px solid #ece0cd;
+}
+
+#signup-form {
+  padding: 3em;
+}
+
+
+// should always be imported last
+@import "media_breakpoints";
